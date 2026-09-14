@@ -16,7 +16,7 @@ function showSlide(index){if(!heroSlides.length)return;currentSlide=(index+heroS
 heroDots.forEach((dot,index)=>dot.addEventListener('click',()=>showSlide(index)));
 if(heroSlides.length>1)setInterval(()=>showSlide(currentSlide+1),4000);
 
-const projectImages=[['project1-1.jpg','project1-2.jpg','project1-3.jpg','project1-4.jpg','project1-5.jpg','project1-6.jpg','project1-7.jpg','project1-8.jpg','project1-9.jpg','project1-10.jpg'],['project2-1.jpg','project2-1.jpg','project2-1.jpg'],['project3-1.jpg','project3-1.jpg','project3-1.jpg']];
+const projectImages=[['project1-1.jpg','project1-2.jpg','project1-3.jpg','project1-4.jpg','project1-5.jpg','project1-6.jpg','project1-7.jpg','project1-8.jpg','project1-9.jpg','project1-10.jpg'],['project2-1.jpg','project2-2.jpg','project2-3.jpg'],['project3-1.jpg','project3-1.jpg','project3-1.jpg']];
 const projectIndexes=[0,0,0];
 document.querySelectorAll('.project-card').forEach(card=>{const project=Number(card.dataset.project),img=card.querySelector('img');card.querySelector('.prev')?.addEventListener('click',()=>{projectIndexes[project]=(projectIndexes[project]-1+projectImages[project].length)%projectImages[project].length;img.src=projectImages[project][projectIndexes[project]];});card.querySelector('.next')?.addEventListener('click',()=>{projectIndexes[project]=(projectIndexes[project]+1)%projectImages[project].length;img.src=projectImages[project][projectIndexes[project]];});});
 
